@@ -6,6 +6,8 @@ The authors of this repository are Kiara Tesen¹'² and Hermilo Cortés³.
 
 ³ Escuela de Gobierno y Transformación Pública, Tecnológico de Monterrey, Mexico City 03700, Mexico
 
+# Considerations
+
 - This repository contains files that allow us to calibrate the MODFLOW model, specifically, estimate groundwater parameters.
 - This repository has a GNU GENERAL PUBLIC LICENSE (GPL-3.0).
 - Some scripts uploaded to this repository make use of other repositories created by the authors:
