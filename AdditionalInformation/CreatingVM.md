@@ -23,5 +23,7 @@ This file contains information for creating a base virtual machine (VM).
     * With this instruction, that box is consumed from a vagrant repository.
     * When executed, a *vagrantfile* is created, where the description of the downloaded box is located.
 * Execute the following instruction: 
+    ```
     vagrant up
+    ```
     * This command will take the "vagrant-file" to raise the VM.
