@@ -33,7 +33,7 @@ This file contains information for creating a base virtual machine (VM).
 
     NOTE: The hypervisor service must be enabled from the computer's bios, depending on the equipment configuration.
 
-**Virtual machine base configuration:**
+**Base VM configuration:**
 
 5. Configuration to execute remote instructions with *winrm*:
 * Disable Firewalls in the control panel
@@ -69,3 +69,35 @@ This file contains information for creating a base virtual machine (VM).
     rm "D:\...\VirtualBox VMs\eyewaretech-dev\box-disk001.vmdk"
     ```
     * On the machine: Go to "This PC", do right click and select "Disk Management" – "Expand volume".
+
+7. Install WEAP
+* Restore the WEAP model and the required version (*backup* file).
+
+8. Install Git
+* Is required to download/update/modify the repository that has the scripts that are used to send the order to the other virtual machines
+* Download the necessary repositories (listed in the [README.md](C:\Users\aimee\Desktop\Github\VA_InverseOptimizationProblem\README.md)):
+    * MODFLOW_Calibration
+    * tcp_server
+    * dirty_pso_optimization_server. The IP of the machine that will be the server (VM1) must be changed to "10.0.0.11" in port: "8888".
+9. The programming language "RUST" must be installed: 
+* Install "Tools for Visual Studio", adding:
+    * C++ Clang Tools for Windows...
+    * C++ modules for build tools v143...
+10. Install Python and create a virtual environment within the repository with the necessary libraries to execute the Simulation-Optimization model in background.
+* Also, add the following:
+    ```
+    python -m pip install -U pip configuration tools
+    pip install git+https://github.com/milocortes/request_rust_server@main
+    ```
+11. Add the folder that contains the MODFLOW executable to the repository.
+
+12. Establish that the screen never turns off.
+
+13. Disable updates for 30 days.
+
+14. When the machine is off, check the RAM and the number of processors assigned to the virtual machine depending on the problem.
+
+15. Configure network adapters: 
+* When the machine is off.
+    * Private network to communicate with other nodes. In "Settings" - "Network" -  "Adapter 1" - Check "Enable Network Adapter".
+    * To communicate the host with the server. In "Settings" - "Network" -  "Adapter 2" - Check "Enable Network Adapter" - Select "Host-only Adapter" / "VirtualBox Host-Only Ethernet Adapter #2".
