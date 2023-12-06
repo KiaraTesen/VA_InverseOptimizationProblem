@@ -75,7 +75,7 @@ This file contains information for creating a base virtual machine (VM).
 
 8. Install Git
 * Is required to download/update/modify the repository that has the scripts that are used to send the order to the other virtual machines
-* Download the necessary repositories (listed in the [README.md](C:\Users\aimee\Desktop\Github\VA_InverseOptimizationProblem\README.md)):
+* Download the necessary repositories (listed in the [README.md](..\README.md)):
     * MODFLOW_Calibration
     * tcp_server
     * dirty_pso_optimization_server. The IP of the machine that will be the server (VM1) must be changed to "10.0.0.11" in port: "8888".
@@ -97,7 +97,6 @@ This file contains information for creating a base virtual machine (VM).
 
 14. When the machine is off, check the RAM and the number of processors assigned to the virtual machine depending on the problem.
 
-15. Configure network adapters: 
-* When the machine is off.
-    * Private network to communicate with other nodes. In "Settings" - "Network" -  "Adapter 1" - Check "Enable Network Adapter".
-    * To communicate the host with the server. In "Settings" - "Network" -  "Adapter 2" - Check "Enable Network Adapter" - Select "Host-only Adapter" / "VirtualBox Host-Only Ethernet Adapter #2".
+15. Configure network adapters when the machine is off:
+* Private network to communicate with other nodes. In "Settings" - "Network" -  "Adapter 1" - Check "Enable Network Adapter".
+* To communicate the host with the server. In "Settings" - "Network" -  "Adapter 2" - Check "Enable Network Adapter" - Select "Host-only Adapter" / "VirtualBox Host-Only Ethernet Adapter #2".
