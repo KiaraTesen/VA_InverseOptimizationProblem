@@ -31,4 +31,21 @@ This file contains information for creating a base virtual machine (VM).
     ```
     * This command will take the "vagrant-file" to create the VM.
 
-NOTE: The hypervisor service must be enabled from the computer's bios, depending on the equipment configuration.
+    NOTE: The hypervisor service must be enabled from the computer's bios, depending on the equipment configuration.
+
+**Virtual machine base configuration:**
+
+6. Configuration to execute remote instructions with *winrm*:
+* Disable Firewalls in the control panel
+* Change the network connection type to private. We do this from Powershell by executing the instruction:
+    ```
+    Set-NetConnectionProfile -NetworkCategory Private
+    ```
+* Restore the listener configuration by executing the following instructions:
+    ```
+    winrm invoke Restore winrm/Config
+    ```
+* Run the following command to make a default configuration of the Windows Remote Administration service and its listener:
+    ```
+    winrm quickconfig
+    ```
