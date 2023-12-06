@@ -75,7 +75,7 @@ This file contains information for creating a base virtual machine (VM).
 
 8. Install Git
 * Is required to download/update/modify the repository that has the scripts that are used to send the order to the other virtual machines
-* Download the necessary repositories (listed in the [README.md](..\README.md)):
+* Download the necessary repositories (listed in the [README.md](README.md)):
     * MODFLOW_Calibration
     * tcp_server
     * dirty_pso_optimization_server. The IP of the machine that will be the server (VM1) must be changed to "10.0.0.11" in port: "8888".
