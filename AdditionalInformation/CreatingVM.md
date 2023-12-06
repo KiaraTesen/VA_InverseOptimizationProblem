@@ -4,7 +4,10 @@ This file contains information for creating a base virtual machine (VM).
 
 1. Install Vagrant [version 2.3.1](https://developer.hashicorp.com/vagrant/downloads) with the default configuration. 
     * Afterwards, restart the computer.
-    * In Powershell, verify the installation with the following instruction: vagrant
+    * In Powershell, verify the installation with the following instruction: 
+    ```
+    vagrant
+    ```
 
 2. Install VirtualBox (version 6.1.38) and the “Extension Pack” of the same version. 
     * The extension pack is installed within the program.
@@ -26,4 +29,6 @@ This file contains information for creating a base virtual machine (VM).
     ```
     vagrant up
     ```
-    * This command will take the "vagrant-file" to raise the VM.
+    * This command will take the "vagrant-file" to create the VM.
+
+NOTE: The hypervisor service must be enabled from the computer's bios, depending on the equipment configuration.
