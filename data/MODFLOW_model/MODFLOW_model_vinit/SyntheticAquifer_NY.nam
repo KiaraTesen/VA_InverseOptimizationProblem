@@ -1,0 +1,14 @@
+# Name File for MODFLOW created on 3/28/2023 by ModelMuse Version 5.0.0.0
+LIST             11 SyntheticAquifer_NY.lst REPLACE
+DATA(BINARY)      9 SyntheticAquifer_NY.cbc REPLACE
+DIS              12 SyntheticAquifer_NY.dis OLD
+BAS6             13 SyntheticAquifer_NY.bas OLD
+OC               39 SyntheticAquifer_NY.oc OLD
+DATA             37 SyntheticAquifer_NY.fhd REPLACE
+DATA             38 SyntheticAquifer_NY.fdn REPLACE
+NWT             133 SyntheticAquifer_NY.nwt OLD
+UPW             134 SyntheticAquifer_NY.upw OLD
+CHD              17 SyntheticAquifer_NY.chd OLD
+RIV              21 SyntheticAquifer_NY.riv OLD
+DRN              22 SyntheticAquifer_NY.drn OLD
+RCH              24 SyntheticAquifer_NY.rch OLD
