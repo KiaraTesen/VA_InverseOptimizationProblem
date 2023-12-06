@@ -35,7 +35,7 @@ This file contains information for creating a base virtual machine (VM).
 
 **Virtual machine base configuration:**
 
-6. Configuration to execute remote instructions with *winrm*:
+5. Configuration to execute remote instructions with *winrm*:
 * Disable Firewalls in the control panel
 * Change the network connection type to private. We do this from Powershell by executing the instruction:
     ```
@@ -49,3 +49,23 @@ This file contains information for creating a base virtual machine (VM).
     ```
     winrm quickconfig
     ```
+
+6. Modify the hard disk size of the virtual machine. 
+* By default, the "windows-10-1709-base-winrm" box is configured with a 40 GB hard disk.
+* First, it is necessary to copy the disk in *.vmdk* format to *.vdi* format. In Powershell, we go to the path where VirtualBox is installed and put the following instruction:
+    ```
+    .\VBoxManage clonemedium "D:\...\VirtualBox VMs\eyewaretech-dev\box-disk001.vmdk" "D:\...\VirtualBox VMs\eyewaretech-dev\box- disk001.vdi" --format vdi
+    ```
+  NOTE: The used path is where the VM is located.
+
+* We increased the size of the *.vdi* disk to 160 GB (160GB * 1024Mb):
+    ```
+    .\VBoxManage modifymedium "D:\...\VirtualBox VMs\eyewaretech-dev\box-disk001.vdi" --resize 163840
+    ```
+* We associate the disk in *.vdi* format to the virtual machine.
+    * When the machine is turned off, in Settings - Storage - delete the disk in *.vmdk* format and add the new one.
+    * Delete from PC the disk in *.vmdk* format with this instruction:
+    ```
+    rm "D:\...\VirtualBox VMs\eyewaretech-dev\box-disk001.vmdk"
+    ```
+    * On the machine: Go to "This PC", do right click and select "Disk Management" – "Expand volume".
