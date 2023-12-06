@@ -1,0 +1,4 @@
+﻿if not exist "..\..\output\NUL" mkdir "..\..\output"
+if not exist "..\..\output\output.SyntheticAquifer_NY\NUL" mkdir "..\..\output\output.SyntheticAquifer_NY"
+..\..\bin\MODFLOW-NWT_64.exe SyntheticAquifer_NY.nam /wait
+pause
