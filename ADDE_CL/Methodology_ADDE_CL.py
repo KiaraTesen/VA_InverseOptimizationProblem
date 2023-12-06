@@ -34,7 +34,7 @@ path_model = os.path.join(path_WEAP, 'MODFLOW_model')
 path_init_model = r'C:\Users\vagrant\Documents\VA_InverseOptimizationProblem\data\MODFLOW_model\MODFLOW_model_vinit'
 path_nwt_exe = r'C:\Users\vagrant\Documents\VA_InverseOptimizationProblem\data\MODFLOW-NWT_1.2.0\bin\MODFLOW-NWT_64.exe'       # Need to add the MODFLOW NWT exe
 path_GIS = r'C:\Users\vagrant\Documents\VA_InverseOptimizationProblem\data\GIS'    
-path_output = r'C:\Users\vagrant\Documents\VA_InverseOptimizationProblem\ADDE-CL\output'                                       # Need full path for WEAP Export
+path_output = r'C:\Users\vagrant\Documents\VA_InverseOptimizationProblem\ADDE_CL\output'                                       # Need full path for WEAP Export
 path_obs_data = r'C:\Users\vagrant\Documents\VA_InverseOptimizationProblem\data\ObservedData'
 
 #---    Initial matriz
@@ -81,7 +81,7 @@ class Particle:
 pob = Particle(np.around(np.array([0]*(n_var)),4))
 
 if ITERATION == 0:
-    with h5py.File('Pre_DDE_historial.h5', 'r') as f:
+    with h5py.File('Pre_ADDE_CL_historial.h5', 'r') as f:
         pob.x = np.copy(f["pob_x"][VM-2])
     f.close()
 
@@ -103,7 +103,7 @@ if ITERATION == 0:
     filename.close()
 
     #---    Create iteration register file
-    with h5py.File('DDE_historial.h5', 'w') as f:
+    with h5py.File('ADDE_CL_historial.h5', 'w') as f:
         iter_h5py = f.create_dataset("iteration", (FINAL_ITERATION, 1))
         pob_x_h5py = f.create_dataset("pob_x", (FINAL_ITERATION, n_var))
         pob_y_h5py = f.create_dataset("pob_y", (FINAL_ITERATION, 1))
@@ -119,7 +119,7 @@ else:
     α = 0.8         # Step size [0, 0.9] - [0.45, 0.95]
     pc = 0.8        # Crossover probability - [0.1, 0.8]
 
-    with h5py.File('DDE_historial.h5', 'r') as f:
+    with h5py.File('ADDE_CL_historial.h5', 'r') as f:
         pob.x = np.copy(f["pob_x"][ITERATION - 1])
         pob.y = f["pob_y"][ITERATION - 1]
 
@@ -191,7 +191,7 @@ else:
     file.close()
 
     #---    Iteration register
-    with h5py.File('DDE_historial.h5', 'a') as f:
+    with h5py.File('ADDE_CL_historial.h5', 'a') as f:
         f["iteration"][ITERATION] = ITERATION
         f["pob_x"][ITERATION] = np.copy(pob.x)
         f["pob_y"][ITERATION] = pob.y
