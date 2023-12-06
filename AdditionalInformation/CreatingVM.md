@@ -11,10 +11,10 @@ This file contains information for creating a base virtual machine (VM).
 
 **Virtual machine creation:**
 
-3. To create the base VM, the Vagrant public box ["windows-10-1709-base-winrm"](https://app .vagrantup.com/eyewaretech/boxes/windows-10-1709-base-winrm) is used, which has the Windows 10 operating system.
+3. To create the base VM, the Vagrant public box ["windows-10-1709-base-winrm"](https://app.vagrantup.com/eyewaretech/boxes/windows-10-1709-base-winrm) is used, which has the Windows 10 operating system.
     * The advantage of this box is that it uses vagrant rdp to access the VM using Windows Remote Desktop Connection.
     * This box has a minimum configuration of RAM, hard drive, etc. However, these settings can be modified later.
-    
+
 4. In Powershell:
 * Go to the path where the *vagrantfile* will be downloaded. Put the following instructions:
     vagrant init eyewaretech/windows-10-1709-base-winrm --box-version 0.0.1
