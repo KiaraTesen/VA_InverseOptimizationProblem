@@ -8,7 +8,7 @@ Instructions to run the Optimization-Simulation model in background from the ser
   cargo build
   cargo run
   ```
-* Don't close the terminal.
+* Don't close the Powershell terminal.
 
 #### In other terminal:
 
@@ -18,9 +18,11 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value 'vm2, vm3, vm4, vm5, vm6, v
 ```
 
 3. To verify hosts:
+```
 (Get-Item WSMan:\localhost\Client\TrustedHosts).value
+```
 
-4. To update repository:
+5. To update repository:
 ```
 foreach($i in 2..21){“Update git in vm$i”
 Invoke-Command -ComputerName “vm$i” -ScriptBlock {cd C:\Users\vagrant\Documents\VA_InverseOptimizationProblem\; git pull}}
@@ -48,7 +50,9 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value 'vm2, vm3, vm4, vm5, vm6, v
 ```
 
 2. To verify hosts:
+```
 (Get-Item WSMan:\localhost\Client\TrustedHosts).value
+```
 
 3. To update repository:
 ```
