@@ -153,3 +153,9 @@ This file contains information for creating a base virtual machine (VM).
       end
    end
    ```
+   
+20. Execute the instruction to create and provision the VMs:
+```
+vagrant up
+```
+NOTE: It must be located in Powershell, in the path where the *vagrantfile* was created.
