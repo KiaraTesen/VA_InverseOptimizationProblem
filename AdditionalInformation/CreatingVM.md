@@ -118,3 +118,38 @@ This file contains information for creating a base virtual machine (VM).
    ```
    vagrant init –m
    ```
+
+### Generate VMs:
+
+19. Edit the *Vagrantfile* and create as many configuration areas as VMs are needed. For this example, we will create three VMs.
+* With *vm.network*, it defines the IP address of each machine on a private network.
+* With *vm.box*, it assigns which box will be used in the configuration of each VM.
+* The Vagrantfile would look like this:
+   ```
+   # -*- mode: ruby -*-
+   # vi: set ft=ruby :
+   
+   NODE_COUNT = 3
+   Vagrant.configure("2") do |config|
+     #Configure the machines
+     #config.vm.network "forwarded_port" , host: 33390 , guest: 3389
+     config.vm.usable_port_range = (2200..2350) 
+     config.vm.communicator = "winrm"
+     config.winrm.username = "vagrant"
+     config.winrm.password = "vagrant"
+   	
+     config.vm.guest = :windows
+     config.windows.halt_timeout = 1200
+   
+     (1..NODE_COUNT).each do |i|
+   
+       config.vm.define "node#{i}" do |subconfig|
+       subconfig.vm.box = "w10_distributed_methodologies"
+       subconfig.vm.hostname = "vm#{i}"
+       subconfig.vm.network "private_network", ip: "10.0.0.#{i+10}"
+   
+       end
+     
+      end
+   end
+   ```
